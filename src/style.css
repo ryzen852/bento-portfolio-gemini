@@ -1,0 +1,137 @@
+/* src/style.css */
+
+/* Reset default margin and padding, set full height and dark background */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; /* 深色背景 */
+  color: #f0f0f0; /* 淺色文字 */
+  box-sizing: border-box; /* Ensure padding and border don't add to element's total size */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol"; /* 設定全局字體 */
+}
+
+/* Ensure #app takes at least full viewport height and uses flexbox for layout */
+.custom-dark-theme {
+  
+  background-color: #1a1a1a; /* Dark background applied to the main app container */
+  color: #f0f0f0; /* Light text */
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  /* Remove padding/margin here if applied by default */
+}
+
+.custom-dark-theme .card-title {
+  color: #ffffff; /* White titles */
+}
+
+.custom-dark-theme .list-group-item {
+    background-color: transparent;
+    border-color: #3a3a3a; /* Darker border for list items */
+    color: #f0f0f0;
+}
+
+.custom-dark-theme .text-muted {
+  color: #b0b0b0 !important; /* A lighter grey color */
+}
+
+/* You might also want to adjust other text colors if needed */
+.custom-dark-theme .text-secondary {
+  color: #cccccc !important; /* Example: make secondary text lighter */
+}
+.custom-dark-theme .text-green {
+  color: #42b883 !important; /* Example: primary text color */
+}
+
+.custom-dark-theme .card {
+  background-color: #2a2a2a; /* Slightly lighter dark for cards */
+  color: #f0f0f0;
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  outline: transparent 2px solid; /* Default transparent outline */
+  outline-offset: -2px;
+}
+
+.custom-dark-theme .card-body {
+  padding: 1.5rem; /* Equivalent to Bootstrap's py-3 or py-4 */
+  /* You can adjust this based on your design */
+}
+
+.custom-dark-theme .card:hover {
+  outline-color: #28a745; /* Color of the outline on hover (Example: Bootstrap primary blue) */
+  transform: translateY(-5px); /* Lift the card up by 5 pixels */
+  /* Adjust box-shadow to make it look like it's floating */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5), 0 0 10px #28a745; /* Example: larger shadow + subtle glow */
+}
+
+/* Custom dark theme for the main container */
+.container-fluid.custom-dark-theme {
+  flex-grow: 1; /* Allow this container to take up available space */
+  padding-top: 1.5rem; /* Equivalent to Bootstrap py-3 or py-4 */
+  padding-bottom: 1.5rem; /* Equivalent to Bootstrap py-3 or py-4 */
+  /* Bootstrap's .container-fluid has default padding, let's use it */
+  /* padding-left: var(--bs-gutter-x, 0.75rem); */
+  /* padding-right: var(--bs-gutter-x, 0.75rem); */
+}
+
+#wave {
+  animation: waveAnimation 2s ease-in-out 2s infinite alternate;
+  display: inline-block;
+  transform: rotate(-15deg);
+  transform-origin: 70% 70%;
+  will-change: transform;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+/* Adjust row gutters using Bootstrap variables */
+.row.g-4 {
+  --bs-gutter-x: 1.5rem; /* Horizontal gutter */
+  --bs-gutter-y: 1.5rem; /* Vertical gutter */
+  /* Bootstrap's .row already handles negative margins based on gutters */
+}
+
+/* Ensure columns have correct padding based on gutters */
+.row.g-4 > [class*="col-"] {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-top: calc(
+    var(--bs-gutter-y) * 0.5
+  ); /* Add vertical padding based on gutter-y */
+  padding-bottom: calc(
+    var(--bs-gutter-y) * 0.5
+  ); /* Add vertical padding based on gutter-y */
+}
+
+/* Ensure cards fill their column height if needed for bento layout visual alignment */
+.row.g-4 > [class*="col-"] > .card {
+  width: 100%; /* Card fills its column width */
+  height: 100%; /* Card fills its column height */
+  display: flex; /* Use flexbox for content alignment inside card */
+  flex-direction: column;
+}
+
+/* Style for links */
+a {
+  text-decoration: none !important; /* Remove underline */
+}
+
+
+/* Add more custom styles for visual appeal */
