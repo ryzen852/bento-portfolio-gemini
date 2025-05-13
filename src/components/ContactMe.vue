@@ -54,7 +54,7 @@ import { ref } from "vue";
 const email = ref("ryzen.script@gmail.com");
 const phone = ref("+1 604 908 2360");
 const location = ref("Vancouver, Canada");
-const linkedInUrl = ref("https://www.linkedin.com/in/karl-chan-5785a62a8/");
+const linkedInUrl = ref("https://www.linkedin.com/in/karl-chan852/");
 const githubUrl = ref("https://github.com/ryzen852");
 </script>
 
